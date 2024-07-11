@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Todo App</h1>
+    <div class="d-flex align-items-center mb-3">
+      <input type="text" class="form-control mr-2" id="todoInput" placeholder="Enter a new todo">
+      <button class="btn btn-primary" onclick="addTodo()">Add</button>
+      <button class="btn btn-primary" onclick="cancelTodo()">Cancel</button>
+    </div>
+    <div class="form-group">
+      <label for="filterSelect">Filter by:</label>
+      <select class="form-control" id="filterSelect" onchange="renderTodos()">
+        <option value="all">All</option>
+        <option value="done">Done</option>
+        <option value="undone">Undone</option>
+      </select>
+    </div>
+    <ul class="list-group" id="todoList"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
