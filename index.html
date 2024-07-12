@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 17 - Exercise</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2> To-do App </h2>
+        <div class="todo-app">
+            <input type="text" id="input-box" placeholder="Enter your task">
+            <span onclick="addTask()" class="add-button">Add</span>
+            <span onclick="cancelElement()" class="cancel-button">Cancel</span>
+        </div>
+        <ul id="list-container">
+            <li class="checked"> Task 1
+                <span onclick="editTask()" class="edit-button">Edit</span>
+                <span onclick="deleteTask()" class="delete-button">Delete</span>
+            </li>
+            <li> Task 2
+                <span onclick="editTask()" class="edit-button">Edit</span>
+                <span onclick="deleteTask()" class="delete-button">Delete</span>
+            </li>
+            <li> Task 3
+                <span onclick="editTask()" class="edit-button">Edit</span>
+                <span onclick="deleteTask()" class="delete-button">Delete</span>
+            </li>
+            <li> Task 4
+                <span onclick="editTask()" class="edit-button">Edit</span>
+                <span onclick="deleteTask()" class="delete-button">Delete</span>
+            </li>
+            <li> Task 5
+                <span onclick="editTask()" class="edit-button">Edit</span>
+                <span onclick="deleteTask()" class="delete-button">Delete</span>
+            </li>
+        </ul>
+        <div class="filter-container">
+            <p>Filter:</p>
+            <select name="filterCompleteTask" id="filter">
+                <option value="Complete"> Complete</option>
+                <option value="To-do">To-do</option>
+            </select>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+body {
+    font-family: sans-serif;
+    margin: 0px;
+    background-color:#14539D;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    padding: 40px;
+    background-color: #fff;
+    align-items: center;
+}
+
+.todo-app {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+#input-box {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #EFF4FA;
+    flex-grow: 2;
+}
+
+.add-button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+.cancel-button {
+    background-color: #FAE7E7;
+    color: #FC5555;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+    font-size: 16px;
+    padding: 12px 4px 12px 0px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    left: -40px;
+    top: 8px;
+}
+
+ul li.checked {
+    color: lightgray;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.svg);
+}
+
+.edit-button {
+    position: absolute;
+    right: 96px;
+}
+
+.delete-button {
+    position: absolute;
+    right: 12px;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#filter {
+    display: inline;
+    margin-left: 12px;
+    height: 32px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 8px;
+}
