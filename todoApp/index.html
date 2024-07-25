@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="https://cdn-icons-png.freepik.com/512/5290/5290594.png" alt="todo-icon"; class="header-icon">
+        <div>
+            <h2>Todo App</h2>
+            <p>Manage your work every day</p>
+        </div>
+    </div>
+    <hr>
+    <div class="todoAdd">
+        <input type="text" id="taskName" placeholder="Enter your task here">
+        <button id="addTask" > Add </button>
+        <button id="cancelEdit"> Cancel </button>
+    </div>
+    <ul id="todoList">
+        <!-- <li class="checked">
+            <input type="checkbox" class="check-box" checked onclick="toggleTask">
+            <span> Task </span>
+        </li>
+        <li> <span> Task </span> </li>
+        <li> <span> Task </span> </li> -->
+    </ul>
+    <hr>
+    <div class="filter-container">
+        <label for="filter"> Filter: </label>
+        <select name="filter" id="filter">
+            <option value="all"> All </option>
+            <option value="done"> Done </option>
+            <option value="undone"> Undone </option>
+        </select>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
