@@ -1,0 +1,67 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-icon {
+    width: 120px;
+    height: 120px;
+}
+
+body {
+    margin: 60px;
+    font-family: sans-serif;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 16px;
+}
+
+h2 {
+    margin-bottom: -12px;
+}
+
+ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -44px;
+}
+
+
+span {
+    margin-right: auto;
+}
+
+.check-box {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+}
+
+.todoAdd {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    height: 32px;
+    gap: 4px;
+}
+
+#taskName {
+    display: block;
+    width: 100%;
+    margin-right: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+button {
+    background-color: rgb(7, 125, 221);
+    color: #fff;
+    border-color: transparent;
+}
+
+#filter {
+    font-size: small;
+    padding: 4px;
+}
