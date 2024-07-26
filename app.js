@@ -2,11 +2,11 @@ let todos = [];
 
 function addTodo() {
   const todoInput = document.getElementById('todoInput');
-  const todoText = todoInput.value.trim();
+  const todoText = todoInput.value;
   if (todoText !== '') {
     todos.push({ text: todoText, isDone: false });
     todoInput.value = '';
-    renderTodos();
+    renderTodo();
   }
 }
 
@@ -18,7 +18,7 @@ function editTodo(index) {
   document.getElementById('todoInput').addEventListener('keyup', function updateTodoOnEnter(event) {
     if (event.key === 'Enter') {
       todos[index].text = todoInput.value;
-      renderTodos();
+      renderTodo();
       todoInput.value = '';
       todoInput.removeEventListener('keyup', updateTodoOnEnter);
     }
@@ -27,30 +27,26 @@ function editTodo(index) {
 
 function deleteTodo(index) {
   todos.splice(index, 1);
-  renderTodos();
+  renderTodo();
 }
 
 function toggleTodo(index) {
-  todos[index].isDone = !todos[index].isDone;
-  renderTodos();
+  const selectedTodo = todos[index];
+  todos.splice(index, 1);
+  selectedTodo.isDone = !selectedTodo.isDone;
+  todos.push(selectedTodo);
+  renderTodo();
 }
 
-function filterTodos() {
-  const filterSelect = document.getElementById('filterSelect');
-  const filterValue = filterSelect.value;
-  renderTodos();
-}
-
-function renderTodos() {
+function renderTodo() {
   const todoList = document.getElementById('todoList');
   todoList.innerHTML = '';
 
-  const filteredTodos = getFilteredTodos();
+  const filteredTodos = getFilteredTodo();
 
   filteredTodos.forEach((todo, index) => {
     const todoItem = document.createElement('li');
     todoItem.className = `list-group-item d-flex justify-content-between align-items-center ${todo.isDone ? 'list-group-item-success' : ''}`;
-
     const todoCheckbox = document.createElement('div');
     todoCheckbox.className = 'form-check';
     const todoCheckboxInput = document.createElement('input');
@@ -59,11 +55,9 @@ function renderTodos() {
     todoCheckboxInput.checked = todo.isDone;
     todoCheckboxInput.onclick = () => toggleTodo(index);
     const todoCheckboxLabel = document.createElement('label');
-    todoCheckboxLabel.className = 'form-check-label';
     todoCheckboxLabel.textContent = todo.text;
     todoCheckbox.appendChild(todoCheckboxInput);
     todoCheckbox.appendChild(todoCheckboxLabel);
-
     const todoActions = document.createElement('div');
     const editButton = document.createElement('button');
     editButton.className = 'btn btn-sm btn-outline-primary mr-2';
@@ -75,14 +69,13 @@ function renderTodos() {
     deleteButton.onclick = () => deleteTodo(index);
     todoActions.appendChild(editButton);
     todoActions.appendChild(deleteButton);
-
     todoItem.appendChild(todoCheckbox);
     todoItem.appendChild(todoActions);
     todoList.appendChild(todoItem);
   });
 }
 
-function getFilteredTodos() {
+function getFilteredTodo() {
   const filterSelect = document.getElementById('filterSelect');
   const filterValue = filterSelect.value;
 
@@ -97,5 +90,5 @@ function getFilteredTodos() {
 
 function cancelTodo() {
   const todoInput = document.getElementById("todoInput");
-  todoInput.value = ""; // Clear the input field
+  todoInput.value = ""; 
 }
